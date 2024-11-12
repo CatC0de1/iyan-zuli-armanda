@@ -157,4 +157,9 @@ section {
   section {
     font-size: 11px;
   }
+
+  .main-top p:nth-child(2) span:nth-child(1), .main-top p:nth-child(2) span:nth-child(2) {
+    font-size: 11px;
+  }
+
 }
