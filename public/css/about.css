@@ -158,6 +158,10 @@ section {
     font-size: 11px;
   }
 
+  .head p:nth-child(2) {
+    font-size: 24;
+  }
+
   .main-top p:nth-child(2) span:nth-child(1), .main-top p:nth-child(2) span:nth-child(2) {
     font-size: 11px;
   }
