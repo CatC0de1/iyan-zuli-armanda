@@ -35,43 +35,40 @@ section {
 }
 
 .main-top {
-  display: flex;
-  flex-direction: row;
   padding-left: 20%;
   padding-right: 20%;
-  gap: 20px;
 }
 
 
-.main-top .left p {
+.main-top p {
   margin-top: 20px;
 }
 
-.main-top .left p:nth-child(1) span:nth-child(1) {
+.main-top p:nth-child(2) span:nth-child(1) {
   display: inline-block;
   color: #E00000;
   font-weight: 700;
   font-size: 20px;
 }
 
-.main-top .left p:nth-child(1) span:nth-child(2) {
+.main-top p:nth-child(2) span:nth-child(2) {
   display: inline-block;
   color: #0F172A;
   font-weight: 600;
   font-size: 20px;
 }
 
-.main-top .left p:nth-child(2), .main-bottom p:nth-child(1) {
+.main-top p:nth-child(3), .main-bottom p:nth-child(1) {
   color: #260100;
 }
 
-.main-top .right {
-  margin-top: 20px;
-}
-
-.main-top .right img {
-  max-width: object-fit;
+.main-top img {
+  float: right;
+  width: 30%;
   height: auto;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 25px;
   border-radius: 32px;
   border-width: 5px;
   border-color: black;
@@ -81,9 +78,9 @@ section {
   /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
   transition-property: filter, border, transform;
   transition-duration: 1s;
-}
+} 
 
-.main-top .right img:hover {
+.main-top img:hover {
   filter: grayscale(0);
   border-color: #E00000;
   --tw-scale-x: 1.02;
@@ -116,11 +113,11 @@ body.dark-mode .head p:nth-child(2) {
   color: white;
 }
 
-body.dark-mode .main-top .left p:nth-child(1) span:nth-child(2) {
+body.dark-mode .main-top p:nth-child(2) span:nth-child(2) {
   color: #cbd5e1;
 }
 
-body.dark-mode .main-top .left p:nth-child(2), body.dark-mode .main-bottom p:nth-child(1) {
+body.dark-mode .main-top p:nth-child(3), body.dark-mode .main-bottom p:nth-child(1) {
   color: #9ca3af;
 }
 
@@ -132,7 +129,7 @@ section {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.head p:nth-child(2), .main .left span, .main-top .left p:nth-child(2), .main-bottom p:nth-child(1) {
+.head p:nth-child(2), .main span, .main-top p:nth-child(2), .main-bottom p:nth-child(1) {
   transition: color 0.3s ease;
 }
 
@@ -144,5 +141,20 @@ section {
 @media (max-width: 1024px) {
   section {
     font-size: 15px;
+  }
+
+  .head p:nth-child(2) {
+    font-size: 24;
+  }
+
+  .main-top p:nth-child(2) span:nth-child(1), .main-top p:nth-child(2) span:nth-child(2) {
+    font-size: 15px;
+  }
+}
+
+/* rasio 1.3 */
+@media (max-width: 768px) {
+  section {
+    font-size: 11px;
   }
 }
