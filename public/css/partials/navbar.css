@@ -147,6 +147,10 @@
   text-decoration-line: underline;
 }
 
+.main-nav .nav-logo:hover {
+  color: #E00000;
+}
+
 /* .subnav2 {
   display: flex;
   flex-direction: row;
@@ -173,3 +177,14 @@
   border-radius: 6px;
   color: black;
 } */
+
+
+/* rasio 1.3 */
+@media (max-width: 1024px) {
+
+}
+
+/* rasio 1.3 */
+@media (max-width: 768px) {
+
+}

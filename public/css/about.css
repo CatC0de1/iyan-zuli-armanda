@@ -8,8 +8,8 @@ section {
 }
 
 .head {
-  padding: 25px 350px;
-  padding-top: 100px;
+  padding-top: 125px;
+  /* padding-bottom: 25px; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -27,7 +27,7 @@ section {
 }
 
 .main {
-  margin-top: 55px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -141,6 +141,10 @@ section {
 @media (max-width: 1024px) {
   section {
     font-size: 15px;
+  }
+
+  .main {
+    margin-top: 61px;
   }
 
   .head p:nth-child(2) {

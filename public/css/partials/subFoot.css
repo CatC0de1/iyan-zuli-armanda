@@ -8,7 +8,8 @@
 }
   
 .top {
-  padding: 10px 100px;
+  padding: 10px 0px;
+  padding-left: 100px;
 }
   
 .top p {
@@ -45,4 +46,63 @@
 .bottom a:hover {
   border-color: #E00000;
   background-color: #E00000;
+}
+
+
+/* rasio 1.3 */
+@media (max-width: 1024px) {
+  .end {
+    padding: 77px;
+    padding-bottom: 38px;
+    gap: 15.3px;
+  }
+
+  .top {
+    padding: 7.6px 0px;
+    padding-left: 77px;
+  }
+
+  .top p {
+    font-size: 24px;
+  }
+
+  .bottom {
+    padding-top: 15.3px;
+    gap: 15.3px;
+  }
+
+  .bottom a {
+    border-width: 2.3px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* rasio 1.3 */
+@media (max-width: 768px) {
+  .end {
+    padding: 59px;
+    padding-bottom: 29px;
+    gap: 11.8px;
+  }
+
+  .top {
+    padding: 5.9px 0px;
+    padding-left: 59px;
+  }
+  
+  .top p {
+    font-size: 19px;
+  }
+
+  .bottom {
+    padding-top: 15.3px;
+    gap: 15.3px;
+  }
+
+  .bottom a {
+    border-width: 1.7px;
+    width: 29px;
+    height: 29px;
+  }
 }
