@@ -31,28 +31,28 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* padding: 20%; */
-}
-
-.main-top {
   padding-left: 20%;
   padding-right: 20%;
 }
 
+.main-top {
+  /* padding-left: 20%;
+  padding-right: 20%; */
+}
 
 .main-top p {
   margin-top: 20px;
 }
 
 .main-top p:nth-child(2) span:nth-child(1) {
-  display: inline-block;
+  display: inline;
   color: #E00000;
   font-weight: 700;
   font-size: 20px;
 }
 
 .main-top p:nth-child(2) span:nth-child(2) {
-  display: inline-block;
+  display: inline;
   color: #0F172A;
   font-weight: 600;
   font-size: 20px;
@@ -88,8 +88,8 @@ section {
 }
 
 .main-bottom {
-  padding-left: 20%;
-  padding-right: 20%;
+  /* padding-left: 20%;
+  padding-right: 20%; */
   padding-bottom: 60px;
   width: 100%;
 }
@@ -143,16 +143,46 @@ section {
     font-size: 15px;
   }
 
-  .main {
-    margin-top: 61px;
+  .head {
+    padding-top: 96px;
   }
 
   .head p:nth-child(2) {
     font-size: 24;
   }
 
+  .main {
+    margin-top: 61px;
+    gap: 15.3px;
+    /* padding-left: 15.3%;
+    padding-right: 15.3%; */
+  }
+
+  .main-top p {
+    margin-top: 15.3px;
+  }
+
   .main-top p:nth-child(2) span:nth-child(1), .main-top p:nth-child(2) span:nth-child(2) {
     font-size: 15px;
+  }
+
+  .main-top img {
+    margin-bottom: 7.6px;
+    margin-left: 15.3px;
+    margin-top: 19.2px;
+    filter: grayscale(0);
+  }
+
+  .main-bottom {
+    padding-bottom: 46px;
+  }
+
+  .main-bottom p:nth-child(2) {
+    margin-top: 15.3px;
+  }
+
+  .end {
+    border-top-width: 173px;
   }
 }
 
@@ -162,12 +192,43 @@ section {
     font-size: 11px;
   }
 
+  .head {
+    padding-top: 74px;
+  }
+
   .head p:nth-child(2) {
     font-size: 24;
+  }
+
+  .main {
+    margin-top: 47px;
+    gap: 11.7px;
+  }
+
+  .main-top p {
+    margin-top: 11.7px;
   }
 
   .main-top p:nth-child(2) span:nth-child(1), .main-top p:nth-child(2) span:nth-child(2) {
     font-size: 11px;
   }
 
+  .main-top img {
+    margin-bottom: 5.8px;
+    margin-left: 11.7px;
+    margin-top: 14.7px;
+    filter: grayscale(0);
+  }
+
+  .main-bottom {
+    padding-bottom: 35px;
+  }
+
+  .main-bottom p:nth-child(2) {
+    margin-top: 11.7px;
+  }
+
+  .end {
+    border-top-width: 133px;
+  }
 }

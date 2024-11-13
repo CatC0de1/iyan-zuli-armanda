@@ -9,8 +9,9 @@ section {
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 50px 350px;
+  padding: 0px 20%;
   padding-top: 150px;
+  padding-bottom: 50px;
 }
 
 .head p:nth-child(1) {
@@ -91,4 +92,74 @@ h1 {
   border-width: 5px;
   border-color: black;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* rasio 1.3 */
+@media (max-width: 1024px) {
+  section {
+    font-size: 12.3px;
+  }
+
+  .head {
+    padding-top: 115px;
+    padding-bottom: 38px;
+  }
+  
+  .head p:nth-child(2) {
+    font-size: 24.6px;
+    margin-bottom: 7.6px;
+  }
+  
+  .main {
+    gap: 77px;
+    padding: 77px 0px;
+  }
+
+  .certif div {
+    gap: 15.3px;
+    scroll-padding: 15.3px;
+    scroll-margin: 15.3px;
+  }
+
+  h1 {
+    font-size: 24.5px;
+    margin-bottom: 7.6px;
+    /* margin-left: 7.6px; */
+    /* padding: 7.6px; */
+  }
+}
+
+/* rasio 1.3 */
+@media (max-width: 768px) {
+  section {
+    font-size: 9.4px;
+  }
+
+  .head {
+    padding-top: 88px;
+    padding-bottom: 29.5px;
+  }
+
+  .head p:nth-child(2) {
+    font-size: 18.9px;
+    margin-bottom: 5.9px;
+  }
+
+  .main {
+    gap: 59px;
+    padding: 59px 0px;
+  }
+
+  .certif div {
+    gap: 11.8px;
+    scroll-padding: 11.8px;
+    scroll-margin: 11.8px;  
+  }
+
+  h1 {
+    font-size: 19px;
+    margin-bottom: 5.9px;
+    /* margin-left: 5.9px; */
+    /* padding: 5.9px; */
+  }
 }
