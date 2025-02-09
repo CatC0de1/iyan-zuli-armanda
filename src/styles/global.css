@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #0070f3;
+  --secondary-color: #1e3a8a;
+  --background-color: #1c1c1c;
+  --text-color: #333;
+  --border-color: #c0c0c0;
+  --hover-color: #33a7ff;
+  --bg-color: rgba(28, 28, 28, 0.7); 
+}
+
+@layer utilities {
+  .section {
+    @apply flex px-[15%] py-[10%] w-full;
+  }
+  
+  .head-section {
+    @apply text-center mb-[3%];
+  }
+
+  .main-title {
+    @apply text-3xl font-bold my-[1%];
+  }
+
+  .second-title {
+    @apply text-(--primary-color) font-bold text-[20px];
+  }
+
+  .skill {
+    @apply text-xs flex flex-row gap-[3%] items-center;
+  }
+
+  .progress {
+    @apply flex flex-col w-[250px] gap-1;
+  }
+
+  .progress-legend {
+    @apply flex flex-row justify-between;
+  }
+
+  .progress-bar {
+    @apply bg-(--text-color) h-2 w-full rounded-md overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply bg-(--primary-color) h-full transition-all duration-700;
+  }
+
+  .portfolio {
+    @apply flex flex-col;
+  }
+
+  .portfolio-img {
+    @apply border-2 border-(--border-color) w-[100%] h-auto flex items-center justify-center overflow-hidden rounded-lg;
+  }
+
+  .portfolio-desc {
+    @apply w-[65%] bg-(--border-color) text-black self-center p-1 mt-[-35px] flex flex-col items-center rounded-lg;
+  }
+
+  .desc-svg {
+    @apply flex flex-wrap flex-row gap-2;
+  }
+
+  .form {
+    @apply mb-[3%] w-full px-[1%];
+  }
+
+  .label {
+    @apply text-base font-bold text-(--primary-color);
+  }
+
+  .input {
+    @apply w-full rounded-md bg-(--border-color) p-3 focus:border-(--primary-color) focus:outline-none focus:ring-1 focus:ring-(--primary-color);
+  }
+
+  .sosmed {
+    @apply flex items-center justify-center h-[50px] w-[50px] border-2 border-(--border-color) rounded-full
+    hover:border-(--primary-color) hover:bg-(--primary-color);
+  }
+
+  .sosmed svg {
+    width: 25px;
+    height: auto;
+  }
+
+  .skill .logo svg,
+  .portfolio-desc .desc-svg svg {
+    width: 30px;
+    height: auto;
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    /* justify-self: flex-end; */
+    align-items: center;
+    flex-basis: 50%;
+    position: relative;
+    flex-basis: 50%;
+  }
+
+  .right img:nth-child(1) {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    /* z-index: 10; */
+    width: 350px;
+    height: auto;
+  }
+
+  .right img:nth-child(2) {
+    position: relative;
+    width: 400px;
+    height: auto;
+    border-radius: 10%;
+  }
+}
