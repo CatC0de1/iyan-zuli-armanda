@@ -1,7 +1,5 @@
 ---
-const showAlert = () => {
-  alert("Tombol telah ditekan!");
-};
+import Email from './react/Contact';
 ---
 
 <section id="contact" class="flex-col justify-between section">
@@ -13,34 +11,7 @@ const showAlert = () => {
       Contact Us
     </h2>
   </div>
-  <form class="flex flex-col items-center">
-    <div class="w-full md:w-[80%]">
-      <div class="form">
-        <label for="name" class="label">Name</label>
-        <input type="text" id="name" class="input" />
-      </div>
-      <div class="form">
-        <label for="email" class="label">Email</label>
-        <input type="email" id="email" class="input" />
-      </div>
-      <div class="form">
-        <label for="message" class="label">Message</label>
-        <textarea id="message" class="h-32 input"></textarea>
-      </div>
-    </div>
-    <div class="flex justify-end w-full md:w-[80%]">
-      <button class="rounded-full bg-(--primary-color) font-semibold text-white 
-      w-[33%] md:w-[25%] py-2 px-4 md:py-3 md:px-8
-      hover:bg-(--hover-color) hover:shadow-lg transition duration-500
-      " id="sendButton" >
-        Send
-      </button>
-    </div>
-  </form>
-</section>
 
-<script lang="ts">
-  document.getElementById('sendButton')?.addEventListener('click', () => {
-    alert('Sorry, I forgot to add node-mailer😅. Anyway, here is my email, iyanzuli35@gmail.com');
-  });
-</script>
+  <Email client:load/>
+
+</section>

@@ -91,7 +91,7 @@
   }
 
   .input {
-    @apply w-full rounded-md bg-(--border-color) p-3 focus:border-(--primary-color) focus:outline-none focus:ring-1 focus:ring-(--primary-color);
+    @apply text-black w-full rounded-md bg-(--border-color) p-3 focus:border-(--primary-color) focus:outline-none focus:ring-1 focus:ring-(--primary-color);
   }
 
   .navigation {
