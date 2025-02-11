@@ -1,4 +1,5 @@
 ---
+import Typing from './react/TypingEffect';
 import blob from '../assets/blob.svg';
 import pp from '../assets/pp.png';
 ---
@@ -6,21 +7,40 @@ import pp from '../assets/pp.png';
 <section id="home" class="flex-row justify-between items-center section bg-(--background-color) text-white 
 border-b-[20px] border-(--border-color)
 ">
-  <div class="flex flex-col gap-5">
-    <p class="text-lg">Hi, I'm</p>
-    <p class="text-4xl font-bold">Iyan Zuli Armanda</p>
-    <p class="text-2xl font-semibold">Informatic Engineering</p>
+  <div class="flex flex-col gap-2 md:gap-5 mt-8 lg:mt-0">
+    <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl
+    mt-6 md:mt-3 lg:mt-0
+    ">
+      Hi, I'm
+    </p>
+    <p class="
+    text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+    font-bold
+    ">
+      Iyan Zuli Armanda
+    </p>
+    <Typing client:load/>
     <a class="
-    bg-white text-(--background-color) py-2 px-4 border-full w-fit border rounded-md
-    hover:bg-(--background-color) hover:text-white transition duration-500
+    text-white bg-(--primary-color) rounded-full w-fit 
+    text-xl md:text-2xl lg:text-3xl xl:text-4xl
+    py-2 px-4 md:py-3 md:px-8
+    hover:bg-(--hover-color) hover:shadow-lg transition duration-500
     " href="#contact">
       Contact Me
     </a>
   </div>
-  <div>
-    <div class="right">
-      <img src={blob.src} alt="" fetchpriority="high" class=" "/>
-      <img src={pp.src} alt="" fetchpriority="high" class="h-auto w-xs" />
+  <div class="hidden md:flex">
+    <div class="right flex justify-center items-center relative">
+      <img src={blob.src} alt="" fetchpriority="high" class="absolute w-[350px] h-auto"/>
+      <img src={pp.src} alt="" fetchpriority="high" class="relative h-auto w-[250px] lg:w-[400px] rounded-[10%]" />
     </div>
   </div>
 </section>
+
+<style>
+    .right img:nth-child(1) {
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+  }
+</style>

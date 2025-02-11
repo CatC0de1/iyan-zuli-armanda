@@ -1,36 +1,57 @@
 ---
+import kucing from '../assets/kucing.png';
 import arrowUp from '../assets/arrow_up.png';
+// import BackToTop from './react/BackToTop';
 ---
 
 <footer class="flex flex-col w-full px-[15%] pt-[10%] pb-[5%] text-white
 bg-(--background-color) border-t-4 border-t-(--border-color)
 ">
   <div class="mb-[5%]">
-    <div class="flex flex-row justify-between items-center">
-      <div class="flex flex-row">
-        <div>
-          ini pp
+    <div class="flex flex-row justify-center md:justify-between xl:justify-around items-center">
+      <div class="flex flex-row items-center">
+        <div class="mr-[2%]">
+          <img src={kucing.src} fetchpriority="high" 
+          class="w-30 h-auto shadow-2xl
+          border-4 radius border-(--border-color)
+          "/>
         </div>
         <div>
-          <h1 class="font-bold text-3xl mb-[4%]">
+          <h1 class="font-bold mb-[4%]
+          text-2xl md:text-3xl
+          ">
             Iyan Zuli Armanda
           </h1>
           <h2>
-           <a href="" class="hover:text-blue-600 hover:underline" >iyanzuli35@gmail.com</a>
+           <a href="https://mail.google.com/mail/u/0/#inbox" class="hover:text-blue-600 hover:underline transition duration-300" target="_blank">
+            iyanzuli35@gmail.com
+          </a>
           </h2>
           <h3>
             Surabaya, East Java, Indonesia
           </h3>
         </div>
       </div>
-      <div class="flex flex-col">
-        <h1 class="font-bold text-3xl mb-[4%]">Navigation</h1>
-        <div class="flex flex-col">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#contact">Contact</a>
+      <div class="hidden md:flex flex-col">
+        <h1 class="font-bold mb-[4%]
+        text-2xl md:text-3xl
+        ">Navigation</h1>
+        <div class="flex flex-col ml-2">
+          <span>
+            - <a href="#home" class="navigation">Home</a>
+          </span>
+          <span>
+            - <a href="#about" class="navigation">About</a>
+          </span>
+          <span>
+            - <a href="#skills" class="navigation">Skills</a>
+          </span>
+          <span>
+            - <a href="#portfolio" class="navigation">Portfolio</a>
+          </span>
+          <span>
+            - <a href="#contact" class="navigation">Contact</a>
+          </span>
         </div>
       </div>
     </div>
@@ -58,42 +79,85 @@ bg-(--background-color) border-t-4 border-t-(--border-color)
         </a>
       </div>
       <div>
-        Made with ❤️ by
-        <a href="https://www.instagram.com/iyan_z21129?igsh=YzljYTk1ODg3Zg==" target="_blank" class="text-(--primary-color)">Iyan Zuli A</a> using
-        <a href="https://astro.build/" target="_blank" class="text-[#BC52EE]">Astro</a>,
-        <a href="https://react.dev/" target="_blank" class="text-[#61DAFB]">React</a>, and
-        <a href="https://tailwindcss.com/" target="_blank" class="text-[#06B6D4]">Tailwind CSS</a>
+        <div class="text-center text-xs md:text-sm">
+          &copy Zi 2025, made with ❤️ by
+          <a href="https://www.instagram.com/iyan_z21129?igsh=YzljYTk1ODg3Zg==" target="_blank" class="text-(--primary-color)">Iyan Zuli A</a> using
+          <a href="https://astro.build/" target="_blank" class="text-[#BC52EE]">Astro</a>,
+          <a href="https://react.dev/" target="_blank" class="text-[#61DAFB]">React</a>, and
+          <a href="https://tailwindcss.com/" target="_blank" class="text-[#06B6D4]">Tailwind CSS</a>
+        </div>
       </div>
     </div>
   </div>
 </footer>
 
 
-<div class="back-to-top rounded-full bg-(--primary-color)" id="backToTop">
+<div 
+id="backToTop"
+class="back-to-top fixed z-15 rounded-full bg-(--primary-color) h-auto mx-5 my-5 
+       md:mx-8 md:my-8 lg:mx-10 lg:my-10 w-10 md:w-15 transition-opacity duration-300 
+       opacity-0 pointer-events-none"
+aria-label="Back to top"
+>
   <a href="#">
-    <img src={arrowUp.src} fetchpriority="high" class="hover:animate-bounce"/>
+    <img src={arrowUp.src} fetchpriority="high" class="w-auto h-auto hover:animate-bounce"/>
   </a>
 </div>
 
+<!-- <div 
+id="backToTop"
+class="back-to-top fixed z-15 rounded-full bg-[--primary-color] h-auto mx-5 my-5 
+       md:mx-8 md:my-8 lg:mx-10 lg:my-10 w-10 md:w-15 transition-opacity duration-300 
+       opacity-0 pointer-events-none"
+>
+<a href="#" aria-label="Back to top">
+  <img src={arrowUp.src} fetchpriority="high" class="w-auto h-auto hover:animate-bounce" />
+</a>
+</div> -->
+
+<!-- <BackToTop client:load/> -->
+
 <style>
-  
-.back-to-top {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  z-index: 15;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  width: 4%;
-}
 
-.back-to-top img {
-  width: auto;
-  height: auto;
-}
+  .sosmed svg {
+    width: 20px;
+    height: auto;
+  }
 
-.back-to-top:hover {
-  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
+  .radius {
+    border-top-left-radius: 9999px;
+    border-bottom-right-radius: 5000px;
+    border-top-right-radius: 1500px;
+    border-bottom-left-radius: 1500px;
+  }
+
+  .back-to-top {
+    right: 0;
+    bottom: 0;
+  }
+
+  .back-to-top:hover {
+    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @media (width >= 48rem) { 
+    .sosmed svg {
+      width: 25px;
+      height: auto;
+    }
+  }
 
 </style>
+
+<script lang="ts">
+  window.addEventListener("scroll", function () {
+    const backToTop = document.getElementById("backToTop");
+    if (window.scrollY > 100) {
+      backToTop.classList.remove("opacity-0", "pointer-events-none");
+      backToTop.classList.add("opacity-100");
+    } else {
+      backToTop.classList.add("opacity-0", "pointer-events-none");
+      backToTop.classList.remove("opacity-100");
+    }
+  });
+</script>

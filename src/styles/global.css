@@ -12,19 +12,36 @@
 
 @layer utilities {
   .section {
-    @apply flex px-[15%] py-[10%] w-full;
+    @apply flex px-[10%] md:px-[15%] py-[10%] 
+    w-full;
   }
   
   .head-section {
     @apply text-center mb-[3%];
   }
 
+  .navbar {
+    @apply hover:text-(--hover-color) transition-all duration-300;
+  }
+
   .main-title {
-    @apply text-3xl font-bold my-[1%];
+    @apply text-3xl xl:text-4xl font-bold my-1;
   }
 
   .second-title {
-    @apply text-(--primary-color) font-bold text-[20px];
+    @apply text-(--primary-color) font-bold;
+  }
+
+  .skills {
+    @apply flex flex-col gap-1 items-center;
+  }
+
+  .skills-title {
+    @apply font-semibold; 
+  }
+
+  .skills-info {
+    @apply flex flex-col gap-2;
   }
 
   .skill {
@@ -32,7 +49,7 @@
   }
 
   .progress {
-    @apply flex flex-col w-[250px] gap-1;
+    @apply flex flex-col w-[200px] md:w-[250px] gap-1;
   }
 
   .progress-legend {
@@ -56,7 +73,9 @@
   }
 
   .portfolio-desc {
-    @apply w-[65%] bg-(--border-color) text-black self-center p-1 mt-[-35px] flex flex-col items-center rounded-lg;
+    @apply w-[75%] lg:w-[65%] 
+    bg-(--border-color) text-black self-center p-1 mt-[-35px] rounded-lg
+    flex flex-col items-center;
   }
 
   .desc-svg {
@@ -68,53 +87,32 @@
   }
 
   .label {
-    @apply text-base font-bold text-(--primary-color);
+    @apply font-bold text-(--primary-color);
   }
 
   .input {
     @apply w-full rounded-md bg-(--border-color) p-3 focus:border-(--primary-color) focus:outline-none focus:ring-1 focus:ring-(--primary-color);
   }
 
-  .sosmed {
-    @apply flex items-center justify-center h-[50px] w-[50px] border-2 border-(--border-color) rounded-full
-    hover:border-(--primary-color) hover:bg-(--primary-color);
+  .navigation {
+    @apply text-(--border-color) hover:text-(--hover-color) transition duration-300 ml-1;
   }
 
-  .sosmed svg {
-    width: 25px;
-    height: auto;
+  .sosmed {
+    @apply flex items-center justify-center border-2 border-(--border-color) rounded-full
+    h-[35px] w-[35px] md:h-[50px] md:w-[50px]
+    hover:border-(--primary-color) hover:bg-(--primary-color) transition duration-200;
   }
 
   .skill .logo svg,
   .portfolio-desc .desc-svg svg {
-    width: 30px;
+    width: 25px;
     height: auto;
   }
 
-  .right {
-    display: flex;
-    justify-content: center;
-    /* justify-self: flex-end; */
-    align-items: center;
-    flex-basis: 50%;
-    position: relative;
-    flex-basis: 50%;
-  }
-
-  .right img:nth-child(1) {
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    /* z-index: 10; */
-    width: 350px;
-    height: auto;
-  }
-
-  .right img:nth-child(2) {
-    position: relative;
-    width: 400px;
-    height: auto;
-    border-radius: 10%;
+  @media (width >= 48rem) { 
+    .portfolio-desc .desc-svg svg {
+      width: 30px
+    }
   }
 }
