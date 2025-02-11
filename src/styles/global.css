@@ -61,7 +61,7 @@
   }
   
   .progress-fill {
-    @apply bg-(--primary-color) h-full transition-all duration-700;
+    @apply bg-(--primary-color) h-full transition-all duration-2000;
   }
 
   .portfolio {

@@ -2,12 +2,11 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
-  const form = useRef<HTMLFormElement>(null); // Explicit type for the ref
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Type guard to ensure form.current is not null
     if (form.current) {
       const formData = new FormData(form.current);
       const user_name = formData.get("user_name")?.toString();

@@ -8,7 +8,7 @@
     "dist"
   ],
   "compilerOptions": {
-    // "strict": true,
+    "strict": true,
     // "noImplicitAny": true,
     // "strictNullChecks": true,
     // "strictFunctionTypes": true,
