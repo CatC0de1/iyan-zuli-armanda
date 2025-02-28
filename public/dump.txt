@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import logo from "../assets/logo.png";
+import cinematic from "../assets/cinematic.mp4";
+
+const currentYear = new Date().getFullYear();
+---
+
+<Layout>
+    <div class="relative flex flex-col items-center gap-10 h-screen w-screen bg-black">
+        
+        <div class="relative z-10 flex flex-col justify-center items-center gap-5 mt-[20%]">
+            <img src={logo.src} alt="Zi Logo" class="w-[150px] h-auto"/>
+            <p class="text-center text-7xl font-black">Iyan Zuli Armanda</p>
+        </div>
+        
+        <div class="relative z-10 flex flex-col justify-center gap-5 w-[60%] text-base">
+            <a class="button" href="/fullstack">Fullstack Developer</a>
+            <a class="button" href="/gamedev">Game Developer</a>
+        </div>
+        
+        <p class="z-10 text-white fixed left-0 bottom-0 ml-[10%] mb-[5%] text-sm">&copy; Zi {currentYear}</p>
+    </div>
+</Layout>

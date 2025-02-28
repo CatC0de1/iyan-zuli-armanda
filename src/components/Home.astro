@@ -3,9 +3,15 @@ import Typing from './react/TypingEffect';
 import blob from '../assets/blob.svg';
 import pp from '../assets/pp.png';
 import Navbar from './react/Navbar';
+
+const texts = Astro.props.texts;
+const showSkills = Astro.props.showSkills;
 ---
 
-<Navbar client:load/>
+<Navbar
+ showSkills={showSkills}
+ client:load
+/>
 
 <header id="home" class="flex-row justify-between items-center section bg-(--background-color) text-white 
 border-b-8 border-(--border-color)
@@ -22,12 +28,16 @@ border-b-8 border-(--border-color)
     ">
       Iyan Zuli Armanda
     </p>
-    <Typing client:load/>
+    <Typing
+      texts={texts}
+      client:load
+    />
     <a class="
     text-white bg-(--primary-color) rounded-full w-fit 
     text-xl md:text-2xl lg:text-3xl xl:text-4xl
     py-2 px-4 md:py-3 md:px-8
     hover:bg-(--hover-color) hover:shadow-lg transition duration-500
+    active:bg-(--secondary-color) active:shadow-md
     " href="#contact">
       Contact Me
     </a>

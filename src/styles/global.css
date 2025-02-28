@@ -20,10 +20,6 @@
     @apply text-center mb-[3%];
   }
 
-  .navbar {
-    @apply hover:text-(--hover-color) transition-all duration-300;
-  }
-
   .main-title {
     @apply text-3xl xl:text-4xl font-bold my-1;
   }
@@ -64,55 +60,28 @@
     @apply bg-(--primary-color) h-full transition-all duration-2000;
   }
 
-  .portfolio {
-    @apply flex flex-col;
-  }
-
-  .portfolio-img {
-    @apply border-2 border-(--border-color) w-[100%] h-auto flex items-center justify-center overflow-hidden rounded-lg;
-  }
-
-  .portfolio-desc {
-    @apply w-[75%] lg:w-[65%] 
-    bg-(--border-color) text-black self-center p-1 mt-[-35px] rounded-lg
-    flex flex-col items-center;
-  }
-
-  .desc-svg {
-    @apply flex flex-wrap flex-row gap-2;
-  }
-
-  .form {
-    @apply mb-[3%] w-full px-[1%];
-  }
-
-  .label {
-    @apply font-bold text-(--primary-color);
-  }
-
-  .input {
-    @apply text-black w-full rounded-md bg-(--border-color) p-3 focus:border-(--primary-color) focus:outline-none focus:ring-1 focus:ring-(--primary-color);
-  }
-
   .navigation {
-    @apply text-(--border-color) hover:text-(--hover-color) transition duration-300 ml-1;
+    @apply text-(--border-color) hover:text-(--hover-color) transition duration-300 ml-1
+    active:text-(--secondary-color);
   }
 
   .sosmed {
     @apply flex items-center justify-center border-2 border-(--border-color) rounded-full
     h-[35px] w-[35px] md:h-[50px] md:w-[50px]
-    hover:border-(--primary-color) hover:bg-(--primary-color) transition duration-200;
+    hover:border-(--primary-color) hover:bg-(--primary-color) transition duration-200
+    active:bg-(--secondary-color) active:border-(--secondary-color) active:shadow-md;
   }
 
-  .skill .logo svg,
-  .portfolio-desc .desc-svg svg {
+  .button {
+    @apply text-white text-center bg-(--primary-color) rounded-lg 
+    py-2 px-4 w-full
+    text-base md:text-lg lg:text-xl xl:text-2xl
+    hover:bg-(--hover-color) hover:shadow-lg transition duration-500
+    active:bg-(--secondary-color) active:shadow-md
+  }
+
+  .skill .logo svg {
     width: 25px;
     height: auto;
-  }
-
-  @media (width >= 48rem) { 
-    .portfolio-desc .desc-svg svg {
-      width: 30px
-    }
   }
 }

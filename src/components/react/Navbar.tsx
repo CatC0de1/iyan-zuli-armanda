@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import '../../styles/style.css'; 
 
-export default function Navbar() {
+interface NavbarProps {
+  showSkills: boolean;
+}
+
+export default function Navbar({ showSkills }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,11 +31,11 @@ export default function Navbar() {
             Iyan Zuli A
           </a>
           <div className="hidden md:flex gap-6 xl:gap-12">
-            <a href="#home" className="navbar">Home</a>
-            <a href="#about" className="navbar">About</a>
-            <a href="#skills" className="navbar">Skills</a>
-            <a href="#portfolio" className="navbar">Portfolio</a>
-            <a href="#contact" className="navbar">Contact</a>
+            <a href="#home" id="navHome" className="navbar">Home</a>
+            <a href="#about" id="navAbout" className="navbar">About</a>
+            {showSkills && <a href="#skills" id="navSkills" className="navbar">Skills</a>}
+            <a href="#portfolio" id="navPortfolio" className="navbar">Portfolio</a>
+            <a href="#contact" id="navContact" className="navbar">Contact</a>
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-md text-white hover:text-(--border-color)">
@@ -47,9 +52,11 @@ export default function Navbar() {
           <span>
             <a href="#about" className="font-semibold ml-6 navbar" onClick={closeMenu}>About</a>
           </span>
-          <span>
-            <a href="#skills" className="font-semibold ml-6 navbar" onClick={closeMenu}>Skills</a>
-          </span>
+          {showSkills && (
+            <span>
+              <a href="#skills" className="font-semibold ml-6 navbar" onClick={closeMenu}>Skills</a>
+            </span>
+          )}
           <span>
             <a href="#portfolio" className="font-semibold ml-6 navbar" onClick={closeMenu}>Portfolio</a>
           </span>

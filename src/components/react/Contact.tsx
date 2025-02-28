@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import '../../styles/style.css'; 
 
 const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -49,7 +50,8 @@ const ContactUs = () => {
         <button
           className="rounded-full bg-(--primary-color) font-semibold text-white 
           w-[33%] md:w-[25%] py-2 px-4 md:py-3 md:px-8
-          hover:bg-(--hover-color) hover:shadow-lg transition duration-500"
+          hover:bg-(--hover-color) hover:shadow-lg transition duration-500
+          active:bg-(--secondary-color) active:shadow-md"
           type="submit"
           id="sendButton"
         >

@@ -1,6 +1,9 @@
 ---
 import kucing from '../assets/kucing.png';
 import arrowUp from '../assets/arrow_up.png';
+
+const currentYear = new Date().getFullYear();
+const showSkills = Astro.props.showSkills;
 ---
 
 <footer class="flex flex-col w-full px-[15%] pt-[10%] pb-[5%] text-white
@@ -22,7 +25,7 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
             Iyan Zuli Armanda
           </h1>
           <h2>
-           <a href="https://mail.google.com/mail/u/0/#inbox" class="hover:text-blue-600 hover:underline transition duration-300" target="_blank">
+           <a href="https://mail.google.com/mail/u/0/#inbox" class="hover:text-blue-600 hover:underline active:text-(--secondary-color) transition duration-300" target="_blank">
             iyanzuli35@gmail.com
           </a>
           </h2>
@@ -32,8 +35,9 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
         </div>
       </div>
       <div class="hidden md:flex flex-col">
-        <h1 class="font-bold mb-[4%]
-        text-2xl md:text-3xl
+        <h1 class="
+          font-bold mb-[4%]
+          text-2xl md:text-3xl
         ">Navigation</h1>
         <div class="flex flex-col ml-2">
           <span>
@@ -42,9 +46,11 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
           <span>
             - <a href="#about" class="navigation">About</a>
           </span>
-          <span>
-            - <a href="#skills" class="navigation">Skills</a>
-          </span>
+          { showSkills && (
+            <span>
+              - <a href="#skills" class="navigation">Skills</a>
+            </span>
+          )}
           <span>
             - <a href="#portfolio" class="navigation">Portfolio</a>
           </span>
@@ -79,7 +85,7 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
       </div>
       <div>
         <div class="text-center text-xs md:text-sm">
-          &copy Zi 2025, made with ❤️ by
+          &copy Zi {currentYear}, made with ❤️ by
           <a href="https://www.instagram.com/iyan_z21129?igsh=YzljYTk1ODg3Zg==" target="_blank" class="text-(--primary-color)">Iyan Zuli A</a> using
           <a href="https://astro.build/" target="_blank" class="text-[#BC52EE]">Astro</a>,
           <a href="https://react.dev/" target="_blank" class="text-[#61DAFB]">React</a>, and
@@ -92,14 +98,16 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
 
 
 <div 
-id="backToTop"
-class="back-to-top fixed z-15 rounded-full bg-(--primary-color) h-auto mx-5 my-5 
-       md:mx-8 md:my-8 lg:mx-10 lg:my-10 w-10 md:w-15 transition-opacity duration-300 
-       opacity-0 pointer-events-none"
-aria-label="Back to top"
+  id="backToTop"
+  class="
+    back-to-top fixed z-15 rounded-full bg-(--primary-color) h-auto mx-5 my-5 
+    md:mx-8 md:my-8 lg:mx-10 lg:my-10 w-10 md:w-15 transition-opacity duration-300 
+    opacity-0 pointer-events-none
+  "
+  aria-label="Back to top"
 >
   <a href="#">
-    <img src={arrowUp.src} fetchpriority="high" class="w-auto h-auto hover:animate-bounce"/>
+    <img src={arrowUp.src} loading="lazy" class="w-auto h-auto hover:animate-bounce"/>
   </a>
 </div>
 

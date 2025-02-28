@@ -1,0 +1,97 @@
+---
+import Home from '../../components/Home.astro';
+import About from '../../components/About.astro';
+import Skills from '../../components/Skills.astro';
+import Portfolios from '../../components/Portfolios.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import background from '../../assets/background.svg';
+
+import DirectoryListingApp from '../../assets/directoryListingApp.png';
+import SelfService from '../../assets/self_service.png';
+import Portfolio from '../../assets/portfolio.png';
+import Server from '../../assets/server.png';
+
+const showSkills = true;
+
+const portfolios = [
+  {
+    imgSrc: DirectoryListingApp.src,
+    title: "Directory Listing App",
+    technologies: [
+      "ejs", 
+      "bootstrap", 
+      "express", 
+      "mongodb", 
+      "passport"
+    ]
+  },
+  {
+    imgSrc: SelfService.src,
+    title: "Prototype Self Service App",
+    technologies: [
+      "ejs", 
+      "sass", 
+      "express", 
+      "mongodb", 
+      "webpack"
+    ]
+  },
+  {
+    imgSrc: Portfolio.src,
+    title: "Personal Website",
+    technologies: [
+      "astro", 
+      "react", 
+      "tailwind", 
+      "ts"
+    ]
+  },
+  {
+    imgSrc: Server.src,
+    title: "Server with OOP",
+    technologies: [
+      "js", 
+      "express", 
+      "mongodb"
+    ]
+  }
+];
+---
+
+<Layout>
+	<div>
+		<img id="background" src={background.src} alt="" fetchpriority="high" />
+			<Home 
+				showSkills={showSkills}
+				texts={["Frontend Developer", "Backend Developer", "Fullstack Developer"]} 
+			/>
+		<About 
+			title="I'm an Software Engineering"
+			text1="As a flexible fullstack developer, I excel in frontend, backend, and fullstack roles to create innovative, high-performance web solutions. With continuous learning and problem-solving, I strive to build impactful digital experiences."
+			text2="I'm also passionate about Game Programming, AI Engineering, and Cybersecurity."
+			images={[
+				{ src: "/images/sertif1.jpg", alt: "Certificate 1" },
+				{ src: "/images/directoryListingApp.jpg", alt: "Certificate 2" }
+			]}
+		/>
+		<Skills/>
+		<Portfolios portfolios={portfolios} />
+		<Contact/>
+		<Footer showSkills={showSkills} />
+	</div>
+</Layout>
+
+
+<style>
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		filter: blur(100px);
+	}
+</style>

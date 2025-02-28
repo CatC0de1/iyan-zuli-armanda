@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div class="fixed inset-0 flex flex-col items-center justify-center
+	text-white">
+		<div class="text-9xl font-black">
+			4<span class="text-(--primary-color)">0</span>4
+		</div>
+		<div class="text-3xl text-(--border-color) font-bold">
+			Page Not Found!
+		</div>
+		<div class="mt-10 flex flex-row items-center justify-center gap-5">
+			<a href="/" class="button">
+				Homepage
+			</a>
+			<a href="javascript:history.back()" class="button">
+				Back
+			</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+
+	body {
+		background-color: #1c1c1c;
+	}
+
+</style>
