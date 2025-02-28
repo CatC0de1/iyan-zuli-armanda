@@ -1,29 +1,30 @@
 ---
 import Carousel from './react/Carousel';
+const { title, text1, text2, images } = Astro.props;
 ---
 
-<section id="about" class="section
-flex-col-reverse gap-7
-lg:flex-row lg:justify-around lg:items-center
+<section 
+  id="about" 
+  class="section
+    flex-col-reverse gap-7
+    lg:flex-row lg:justify-around lg:items-center
 ">
   <div class="basis-[40%]">
-    <Carousel client:load />
+    <Carousel images={images} client:load />
   </div>
   <div class="basis-[50%]">
     <h1 class="second-title">
       About Me
     </h1>
     <h2 class="main-title">
-      I'm an Informatic Engineering
+      {title}
     </h2>
     <div>
       <p class="text-justify">
-        Each project is a chance to grow and deliver something unique. 
-        My goal is to contribute to the future of digital innovation through hard work and continuous learning. 
-        The journey may be challenging, but it's one I'm excited to take on!
+        {text1}
       </p>
       <p class="mt-2 text-justify">
-        I'm also passionate about Game Programming, AI Engineering, and Cybersecurity.
+        {text2}
       </p>
     </div>
   </div>

@@ -1,13 +1,21 @@
 import React from "react";
 import TypeIt from "typeit-react";
+import '../../styles/style.css'; 
 
-const Typing: React.FC = () => {
+interface TypingProps {
+  texts: string[];
+}
+
+const Typing: React.FC<TypingProps> = ({ texts }) => {
   return (
-    <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+    <p className="typing">
       <TypeIt
         options={{ loop: true }}
         getBeforeInit={(instance) => {
-          instance.type("Frontend Developer").pause(1500).delete(18).pause(500).type("Backend Developer").pause(1500).delete(17).pause(500).type("Fullstack Developer").pause(1500).delete(19);
+          {texts.map((text, index) => (
+            instance.type(text).pause(1500).delete(text.length).pause(500)
+          ))}
+          // instance.type("Frontend Developer").pause(1500).delete(18).pause(500).type("Backend Developer").pause(1500).delete(17).pause(500).type("Fullstack Developer").pause(1500).delete(19);
           return instance;
         }}
       />

@@ -1,11 +1,15 @@
 import { useState } from "react";
 
-const images = [
-  { src: "/images/sertif1.jpg", alt: "Certif Alibaba" },
-  { src: "/images/directoryListingApp.jpg", alt: "Directory Listing App" },
-];
+interface Image {
+  src: string;
+  alt: string;
+}
 
-export default function Carousel() {
+interface CarouselProps {
+  images: Image[];
+}
+
+export default function Carousel({ images }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToSlide = (index: number) => {
@@ -23,6 +27,7 @@ export default function Carousel() {
             className={`border-4 border-(--border-color) absolute w-auto max-h-[200px] lg:max-h-[300px] object-contain transition-opacity duration-1000 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
+            loading="lazy"
           />
         ))}
       </div>

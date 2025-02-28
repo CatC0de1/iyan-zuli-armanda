@@ -1,0 +1,60 @@
+---
+import Home from '../../components/Home.astro';
+import About from '../../components/About.astro';
+import Portfolios from '../../components/Portfolios.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import background from '../../assets/background.svg';
+
+import bubbleRunner from '../../assets/bubbleRunner.jpg';
+
+const showSkills = false;
+
+const portfolios = [
+	{
+		imgSrc: bubbleRunner.src,
+		title: "Voice Input Game",
+		technologies: [
+			"unity", 
+			// "csharp", 
+			"canva", 
+			"blender"
+		]
+	}
+]
+---
+
+<Layout>
+	<div>
+		<img id="background" src={background.src} alt="" fetchpriority="high" />
+			<Home 
+				showSkills={showSkills}
+				texts={["Game Programmer", "Game Designer"]} 
+			/>
+		<About
+			title="I'm a Game Developer"
+			text1="As a passionate game developer and designer, I enjoy crafting engaging gameplay experiences for fun. Whether coding mechanics or designing worlds, I love bringing creative ideas to life through interactive storytelling and innovation."
+			text2="I'm also passionate about Fullstack Developer, AI Engineering, and Cybersecurity."
+			images={[
+				{ src: "/images/ggj.jpg", alt: "Game Jam" }
+			]}
+		/>
+		<Portfolios portfolios={portfolios} />
+		<Contact/>
+		<Footer showSkills={showSkills} />
+	</div>
+</Layout>
+
+
+<style>
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		filter: blur(100px);
+	}
+</style>
