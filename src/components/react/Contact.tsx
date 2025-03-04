@@ -79,7 +79,7 @@ const ContactUs = () => {
         <button
           className="rounded-full bg-[var(--primary-color)] font-semibold text-white 
           w-[33%] md:w-[25%] py-2 px-4 md:py-3 md:px-8
-          hover:bg-[var(--hover-color)] hover:shadow-lg transition duration-500
+          hover:bg-[var(--hover-color)] hover:shadow-lg transition
           active:bg-[var(--secondary-color)] active:shadow-md disabled:opacity-50"
           type="submit"
           disabled={isSubmitting}
@@ -90,7 +90,7 @@ const ContactUs = () => {
       </div>
 
       {statusMessage && (
-        <div className={`mt-4 text-center font-semibold ${statusMessage.type === 'success' ? 'text-green-500' : 'text-red-500'}`}>
+        <div className={`mt-6 text-center font-semibold ${statusMessage.type === 'success' ? 'text-green-500' : 'text-red-500'}`}>
           {statusMessage.text}
         </div>
       )}

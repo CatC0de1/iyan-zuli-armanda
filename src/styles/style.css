@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .navbar {
-  @apply hover:text-(--hover-color) transition-all duration-300
+  @apply hover:text-(--hover-color) transition-all
   active:text-(--secondary-color);
 }
 

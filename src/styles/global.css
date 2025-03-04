@@ -61,14 +61,14 @@
   }
 
   .navigation {
-    @apply text-(--border-color) hover:text-(--hover-color) transition duration-300 ml-1
+    @apply text-(--border-color) hover:text-(--hover-color) transition ml-1
     active:text-(--secondary-color);
   }
 
   .sosmed {
     @apply flex items-center justify-center border-2 border-(--border-color) rounded-full
     h-[35px] w-[35px] md:h-[50px] md:w-[50px]
-    hover:border-(--primary-color) hover:bg-(--primary-color) transition duration-200
+    hover:border-(--primary-color) hover:bg-(--primary-color) transition
     active:bg-(--secondary-color) active:border-(--secondary-color) active:shadow-md;
   }
 
@@ -76,7 +76,7 @@
     @apply text-white text-center bg-(--primary-color) rounded-lg 
     py-2 px-4 w-full
     text-base md:text-lg lg:text-xl xl:text-2xl
-    hover:bg-(--hover-color) hover:shadow-lg transition duration-500
+    hover:bg-(--hover-color) hover:shadow-lg transition 
     active:bg-(--secondary-color) active:shadow-md
   }
 
