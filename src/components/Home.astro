@@ -1,7 +1,7 @@
 ---
 import Typing from './react/TypingEffect';
 import blob from '../assets/blob.svg';
-import pp from '../assets/pp.png';
+import pp from '../assets/pp.webp';
 import Navbar from './react/Navbar';
 
 const texts = Astro.props.texts;
@@ -10,7 +10,7 @@ const showSkills = Astro.props.showSkills;
 
 <Navbar
  showSkills={showSkills}
- client:load
+ client:idle
 />
 
 <header id="home" class="flex-row justify-between items-center section bg-(--background-color) text-white 
@@ -30,7 +30,7 @@ border-b-8 border-(--border-color)
     </p>
     <Typing
       texts={texts}
-      client:load
+      client:idle
     />
     <a class="
     text-white bg-(--primary-color) rounded-full w-fit 
@@ -51,7 +51,7 @@ border-b-8 border-(--border-color)
 </header>
 
 <style>
-    .right img:nth-child(1) {
+  .right img:nth-child(1) {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 

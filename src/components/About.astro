@@ -10,7 +10,7 @@ const { title, text1, text2, images } = Astro.props;
     lg:flex-row lg:justify-around lg:items-center
 ">
   <div class="basis-[40%]">
-    <Carousel images={images} client:load />
+    <Carousel images={images} client:visible />
   </div>
   <div class="basis-[50%]">
     <h1 class="second-title">

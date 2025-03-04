@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-const { aboutContent } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,7 +30,7 @@ const { aboutContent } = Astro.props;
 
 </style>
 
-<script>
+<script lang="ts">
 
 	document.addEventListener('contextmenu', function(event) {
   	event.preventDefault();

@@ -1,6 +1,5 @@
 import React from "react";
 import TypeIt from "typeit-react";
-import '../../styles/style.css'; 
 
 interface TypingProps {
   texts: string[];
@@ -8,14 +7,13 @@ interface TypingProps {
 
 const Typing: React.FC<TypingProps> = ({ texts }) => {
   return (
-    <p className="typing">
+    <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
       <TypeIt
         options={{ loop: true }}
         getBeforeInit={(instance) => {
-          {texts.map((text, index) => (
-            instance.type(text).pause(1500).delete(text.length).pause(500)
-          ))}
-          // instance.type("Frontend Developer").pause(1500).delete(18).pause(500).type("Backend Developer").pause(1500).delete(17).pause(500).type("Fullstack Developer").pause(1500).delete(19);
+          texts.forEach((text) => {
+            instance.type(text).pause(1500).delete(text.length).pause(500);
+          });
           return instance;
         }}
       />
