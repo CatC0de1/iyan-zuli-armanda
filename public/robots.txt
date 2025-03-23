@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iyan-zuli-armanda.netlify.app/sitemap.xml

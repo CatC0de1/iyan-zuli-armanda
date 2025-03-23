@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
+    "@astrojs/sitemap": "^3.3.0",
     "@babel/types": "^7.26.8",
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.0.4",
