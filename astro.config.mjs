@@ -9,7 +9,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://iyan-zuli-armanda.netfiy.app',
+  site: 'https://iyan-zuli-armanda.netlify.app',
 
   integrations: [react(), sitemap()]
 });
