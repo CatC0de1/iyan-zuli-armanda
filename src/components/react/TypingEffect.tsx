@@ -7,7 +7,7 @@ interface TypingProps {
 
 const Typing: React.FC<TypingProps> = ({ texts }) => {
   return (
-    <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+    <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
       <TypeIt
         options={{ loop: true }}
         getBeforeInit={(instance) => {
@@ -17,7 +17,7 @@ const Typing: React.FC<TypingProps> = ({ texts }) => {
           return instance;
         }}
       />
-    </p>
+    </h2>
   );
 };
 

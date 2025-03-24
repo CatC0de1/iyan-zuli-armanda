@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+
+const { title = "Iyan Zuli Armanda", description = "I'm Iyan Zuli Armanda, an Informatic Engineering. Here's my portfolio", keywords = "Iyan Zuli Armanda" } = Astro.props;
 ---
 
 <!doctype html>
@@ -9,8 +11,10 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/svg/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<script src="http://localhost:8097" defer></script>
-		<title>Iyan Zuli Armanda</title>
+		<!-- <script src="http://localhost:8097" defer></script> -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
 	</head>
 	<body class="text-(--text-color) text-base lg:text-lg xl:text-xl">
 		<slot />

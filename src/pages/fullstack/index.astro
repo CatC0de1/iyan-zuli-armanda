@@ -64,8 +64,15 @@ const portfolios = [
 ];
 ---
 
-<Layout>
-	<div>
+<Layout 
+  title="Fullstack Developer - Iyan Zuli Armanda"
+  description="Personal website showcasing fullstack development, frontend development, backend developmnet projects on many platforms."
+  keywords="
+  Fullstack Developer, Frontend Developer, Backend Developer,
+  Web Developer, Software Engineer, Mobile Developer, Dekstop Developer, Android Developer, Cross Platform Developer,
+  React, Express, Next, Nest, Tailwind, MongoDB, PostgreSQL, Typescript, Javascript"
+>
+  <div>
 		<img id="background" src={background.src} alt="" fetchpriority="high" />
 			<Home 
 				showSkills={showSkills}
@@ -99,3 +106,13 @@ const portfolios = [
 		filter: blur(100px);
 	}
 </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Fullstack Development",
+    "description": "I'm a fullstack developer with modern technologies.",
+    "url": "https://iyan-zuli-armanda.netlify.app/fullstack/"
+  }
+</script>
