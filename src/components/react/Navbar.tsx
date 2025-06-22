@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import '../../styles/style.css'; 
 
-interface NavbarProps {
-  showSkills: boolean;
-}
-
-export default function Navbar({ showSkills }: NavbarProps) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -33,7 +29,7 @@ export default function Navbar({ showSkills }: NavbarProps) {
           <div className="hidden md:flex gap-6 xl:gap-12">
             <a href="#home" id="navHome" className="navbar">Home</a>
             <a href="#about" id="navAbout" className="navbar">About</a>
-            {showSkills && <a href="#skills" id="navSkills" className="navbar">Skills</a>}
+            <a href="#skills" id="navSkills" className="navbar">Skills</a>
             <a href="#projects" id="navProjects" className="navbar">Projects</a>
             <a href="#contact" id="navContact" className="navbar">Contact</a>
           </div>
@@ -52,11 +48,9 @@ export default function Navbar({ showSkills }: NavbarProps) {
           <span>
             <a href="#about" className="font-semibold ml-6 navbar" onClick={closeMenu}>About</a>
           </span>
-          {showSkills && (
-            <span>
-              <a href="#skills" className="font-semibold ml-6 navbar" onClick={closeMenu}>Skills</a>
-            </span>
-          )}
+          <span>
+            <a href="#skills" className="font-semibold ml-6 navbar" onClick={closeMenu}>Skills</a>
+          </span>
           <span>
             <a href="#projects" className="font-semibold ml-6 navbar" onClick={closeMenu}>Projects</a>
           </span>

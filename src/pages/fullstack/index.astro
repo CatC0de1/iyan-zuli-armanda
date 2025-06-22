@@ -17,8 +17,6 @@ import forumApi from '../../assets/forumApi.webp';
 import myDiary from '../../assets/myDiary.webp';
 import bisaEnggress from '../../assets/bisaEnggress.webp'
 
-const showSkills = true;
-
 const portfolios = [
   {
     url: "https://github.com/CatC0de1/SurabayaBestPoint/tree/main",
@@ -122,7 +120,6 @@ const portfolios = [
   <div>
 		<img id="background" src={background.src} alt="" fetchpriority="high" />
 			<Home 
-				showSkills={showSkills}
 				texts={["Frontend Developer", "Backend Developer", "Fullstack Developer"]} 
 			/>
 		<About 
@@ -137,7 +134,7 @@ const portfolios = [
 		<Skills/>
 		<Portfolios portfolios={portfolios} />
 		<Contact/>
-		<Footer showSkills={showSkills} />
+		<Footer />
 	</div>
 </Layout>
 
