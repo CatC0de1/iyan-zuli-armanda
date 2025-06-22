@@ -34,7 +34,7 @@ export default function Navbar({ showSkills }: NavbarProps) {
             <a href="#home" id="navHome" className="navbar">Home</a>
             <a href="#about" id="navAbout" className="navbar">About</a>
             {showSkills && <a href="#skills" id="navSkills" className="navbar">Skills</a>}
-            <a href="#portfolio" id="navPortfolio" className="navbar">Portfolio</a>
+            <a href="#projects" id="navProjects" className="navbar">Projects</a>
             <a href="#contact" id="navContact" className="navbar">Contact</a>
           </div>
           <div className="md:hidden">
@@ -58,7 +58,7 @@ export default function Navbar({ showSkills }: NavbarProps) {
             </span>
           )}
           <span>
-            <a href="#portfolio" className="font-semibold ml-6 navbar" onClick={closeMenu}>Portfolio</a>
+            <a href="#projects" className="font-semibold ml-6 navbar" onClick={closeMenu}>Projects</a>
           </span>
           <span>
             <a href="#contact" className="font-semibold ml-6 navbar" onClick={closeMenu}>Contact</a>        

@@ -48,10 +48,6 @@
     @apply flex flex-col w-[200px] md:w-[250px] gap-1;
   }
 
-  .progress-legend {
-    @apply flex flex-row justify-between;
-  }
-
   .progress-bar {
     @apply bg-(--text-color) h-2 w-full rounded-md overflow-hidden;
   }

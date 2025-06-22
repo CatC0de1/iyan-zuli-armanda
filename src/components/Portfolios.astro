@@ -12,22 +12,22 @@ const portfolios = Astro.props.portfolios as Portfolio[];
 ---
 
 <section 
-  id="portfolio" 
+  id="projects" 
   class="
-    flex-col justify-between section gap-20 md:gap-4 
+    flex-col justify-between section gap-5 md:gap-20 lg:gap-30 xl:gap-35
     bg-(--background-color) text-white border-y-8 border-(--border-color)
 ">
   <div class="head-section">
     <h1 class="second-title">
-      Portfolio
+      Projects
     </h1>
     <h2 class="main-title">
-      My Portfolio
+      My Projects
     </h2>
   </div>
   <div class="
-    grid grid-cols-1 md:grid-cols-2 
-    place-content-center place-items-center gap-[5%] mt-[2%]
+    grid grid-cols-1 md:grid-cols-2
+    place-content-center place-items-center gap-5 md:gap-[5%]
   ">
     {portfolios.map((portfolio) => (
       <a href={portfolio.url} class="flex flex-col" target="_blank">
@@ -39,7 +39,7 @@ const portfolios = Astro.props.portfolios as Portfolio[];
           bg-(--border-color) text-black self-center p-1 mt-[-35px] rounded-lg
           flex flex-col items-center
         ">
-          <h1 class="">
+          <h1 class="text-center">
             {portfolio.title}
           </h1>
           <div class="flex flex-row justify-center gap-2">
@@ -55,7 +55,7 @@ const portfolios = Astro.props.portfolios as Portfolio[];
       </a>
     ))}
   </div>
-  <div class="self-center mt-3 md:mt-9">
+  <div class="self-center md:mt-5">
     See more on my github,
     <a href="https://github.com/CatC0de1" class="text-slate-400 hover:text-(--hover-color) active:text-(--secondary-color) transition" target="_blank">
       click here

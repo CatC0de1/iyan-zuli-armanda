@@ -12,6 +12,10 @@ import DirectoryListingApp from '../../assets/directoryListingApp.webp';
 import SelfService from '../../assets/self_service.webp';
 import Portfolio from '../../assets/portfolio.webp';
 import Server from '../../assets/server.webp';
+import puriRaniLasem from '../../assets/puriRaniLasem.webp';
+import forumApi from '../../assets/forumApi.webp';
+import myDiary from '../../assets/myDiary.webp';
+import bisaEnggress from '../../assets/bisaEnggress.webp'
 
 const showSkills = true;
 
@@ -22,19 +26,21 @@ const portfolios = [
     title: "Directory Listing App",
     technologies: [
       "ejs", 
-      "bootstrap", 
+      "bootstrap",
+      "js",
       "express", 
       "mongodb", 
       "passport"
     ]
   },
   {
-    url: "https://github.com/CatC0de1/kafe-oop",
+    url: "https://github.com/UniversitasNegeriSurabaya-Iyan165/oop_kafe-frontend",
     imgSrc: SelfService.src,
     title: "Prototype Self Service App",
     technologies: [
-      "ejs", 
-      "sass", 
+      "ejs",
+      "sass",
+      "js",
       "express", 
       "mongodb", 
       "webpack"
@@ -52,15 +58,59 @@ const portfolios = [
     ]
   },
   {
-    url: "https://github.com/CatC0de1/base-server",
+    url: "https://github.com/UniversitasNegeriSurabaya-Iyan165/oop_kafe-backend",
     imgSrc: Server.src,
     title: "Server with OOP",
     technologies: [
-      "js", 
+      "js",
       "express", 
       "mongodb"
     ]
-  }
+  },
+    {
+    url: "https://github.com/CatC0de1/BisaEnggress-frontend",
+    imgSrc: bisaEnggress.src,
+    title: "Chatbot English Learning Mobile App",
+    technologies: [
+      "react",
+      "ts",
+      "ai"
+    ]
+  },
+    {
+    url: "https://github.com/CatC0de1/PuriRaniLasem",
+    imgSrc: puriRaniLasem.src,
+    title: "Makeup Artist Branding Website",
+    technologies: [
+      "astro", 
+      "react", 
+      "tailwind",
+      "ts"
+    ]
+  },
+    {
+    url: "https://github.com/CatC0de1/AdonisForumApi-backend",
+    imgSrc: forumApi.src,
+    title: "Forum API Server with Adonis",
+    technologies: [
+      "adonis", 
+      "ts", 
+      "mysql"
+    ]
+  },
+    {
+    url: "https://github.com/CatC0de1/MyDiary",
+    imgSrc: myDiary.src,
+    title: "Prototype MyDiary Desktop App",
+    technologies: [
+      "tauri", 
+      "rust", 
+      "react",
+      "sqlite",
+      "ts",
+      "tailwind"
+    ]
+  },
 ];
 ---
 
@@ -77,8 +127,8 @@ const portfolios = [
 			/>
 		<About 
 			title="I'm a Software Engineer"
-			text1="As a flexible fullstack developer, I excel in frontend, backend, and fullstack roles to create innovative, high-performance web solutions. With continuous learning and problem-solving, I strive to build impactful digital experiences."
-			text2="I'm also passionate about Game Programming, AI Engineering, and Cybersecurity."
+			text1="As a flexible fullstack developer, I excel in frontend, backend, and fullstack roles to create innovative, high-performance app solutions. With continuous learning and problem-solving, I strive to build impactful digital experiences."
+			text2="I'm passionate about web development, desktop development, mobile development, low level app, game development, and also cybersecurity."
 			images={[
 				{ src: "/images/sertif1.webp", alt: "Certificate 1" },
 				{ src: "/images/directoryListingApp.webp", alt: "Certificate 2" }
