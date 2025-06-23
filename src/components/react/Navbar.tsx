@@ -41,21 +41,21 @@ export default function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden p-4 flex flex-col gap-4">
+        <div className="md:hidden p-4 flex flex-col items-center gap-4 w-full">
           <span>
-            <a href="#home" className="font-semibold ml-6 navbar" onClick={closeMenu}>Home</a>
+            <a href="#home" className="font-semibold navbar" onClick={closeMenu}>Home</a>
           </span>
           <span>
-            <a href="#about" className="font-semibold ml-6 navbar" onClick={closeMenu}>About</a>
+            <a href="#about" className="font-semibold navbar" onClick={closeMenu}>About</a>
           </span>
           <span>
-            <a href="#skills" className="font-semibold ml-6 navbar" onClick={closeMenu}>Skills</a>
+            <a href="#skills" className="font-semibold navbar" onClick={closeMenu}>Skills</a>
           </span>
           <span>
-            <a href="#projects" className="font-semibold ml-6 navbar" onClick={closeMenu}>Projects</a>
+            <a href="#projects" className="font-semibold navbar" onClick={closeMenu}>Projects</a>
           </span>
           <span>
-            <a href="#contact" className="font-semibold ml-6 navbar" onClick={closeMenu}>Contact</a>        
+            <a href="#contact" className="font-semibold navbar" onClick={closeMenu}>Contact</a>        
           </span>
         </div>
       )}

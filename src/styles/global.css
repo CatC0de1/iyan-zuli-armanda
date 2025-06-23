@@ -70,7 +70,7 @@
 
   .button {
     @apply text-white text-center bg-(--primary-color) rounded-lg 
-    py-2 px-4 w-full
+    py-2 px-4
     text-base md:text-lg lg:text-xl xl:text-2xl
     hover:bg-(--hover-color) hover:shadow-lg transition 
     active:bg-(--secondary-color) active:shadow-md
