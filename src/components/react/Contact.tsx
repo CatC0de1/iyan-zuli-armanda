@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import '../../styles/style.css';
 
 const ContactUs = () => {
+  const [appear, setAppear] = useState(false);
   const [formData, setFormData] = useState({
     user_name: '',
     user_email: '',
@@ -35,10 +36,15 @@ const ContactUs = () => {
     }
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => setAppear(true), 100);
+    return() => clearTimeout(timer);
+  }, []);
+
   return (
     <form className="flex flex-col items-center" onSubmit={sendEmail}>
       <div className="w-full md:w-[80%] space-y-4">
-        <div className="form">
+        <div className={`form ${ appear? `opacity-100 translate-y-0` : `opacity-0 translate-y-40` }`}>
           <label htmlFor="name" className="label">Name</label>
           <input 
             type="text" 
@@ -50,7 +56,7 @@ const ContactUs = () => {
             required 
           />
         </div>
-        <div className="form">
+        <div className={`form ${ appear? `opacity-100 translate-y-0` : `opacity-0 translate-y-30` }`}>
           <label htmlFor="email" className="label">Email</label>
           <input 
             type="email" 
@@ -62,7 +68,7 @@ const ContactUs = () => {
             required 
           />
         </div>
-        <div className="form">
+        <div className={`form ${ appear? `opacity-100 translate-y-0` : `opacity-0 translate-y-10` }`}>
           <label htmlFor="message" className="label">Message</label>
           <textarea 
             id="message" 
@@ -86,7 +92,6 @@ const ContactUs = () => {
         >
           {isSubmitting ? 'Sending...' : 'Send'}
         </button>
-
       </div>
 
       {statusMessage && (

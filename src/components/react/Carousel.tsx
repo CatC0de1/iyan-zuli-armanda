@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Image {
   src: string;
@@ -11,13 +11,23 @@ interface CarouselProps {
 
 export default function Carousel({ images }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [appear, setAppear] = useState(false);
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => setAppear(true), 100);
+    return() => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="flex flex-col items-center relative w-full max-w-lg mx-auto">
+    <div className={`flex flex-col items-center relative w-full max-w-lg mx-auto
+      transform transition duration-700 ease-out ${
+        appear? `opacity-100 translate-y-0 lg:translate-x-0` : `translate-y-20 lg:translate-y-0 opacity-0 lg:-translate-x-20 -translate-x-0`
+      }
+    `}>
       <div className="relative w-full h-[200px] lg:h-[300px] flex items-center justify-center overflow-hidden">
         {images.map((image, index) => (
           <img

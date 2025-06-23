@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -13,6 +14,13 @@ interface Portfolio {
 }
 
 export default function PortfolioCarousel({ portfolios }: { portfolios: Portfolio[] }) {
+  const [appear, setAppear] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAppear(true), 100 );
+    return() => clearTimeout(timer);
+  }, []);
+
   return (
     <Swiper 
       modules={[Navigation, Autoplay]}
@@ -23,7 +31,12 @@ export default function PortfolioCarousel({ portfolios }: { portfolios: Portfoli
         0: { slidesPerView: 1 },
         768: { slidesPerView: 2 }
       }}
-      className='w-full md:w-[85%] lg:w-[80%] xl:w-[75%] h-full'
+      className=
+        {`
+          w-full md:w-[85%] lg:w-[80%] xl:w-[75%] h-full
+          transform transition duration-700 ease-out ${
+            appear? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10' }
+        `}
     >
     {portfolios.map((portfolio) => (
       <SwiperSlide key={portfolio.title} className='flex h-full'>
@@ -49,6 +62,7 @@ export default function PortfolioCarousel({ portfolios }: { portfolios: Portfoli
               <div className="flex flex-row gap-2">
                 {portfolio.technologies.map((tech) => (
                   <img 
+                    key={tech}
                     src={`/svg/tecs/${tech}.svg`} 
                     className="h-auto w-6 lg:w-8"
                     loading="lazy" 

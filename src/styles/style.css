@@ -6,7 +6,7 @@
 }
 
 .form {
-  @apply mb-[3%] w-full px-[1%];
+  @apply mb-[3%] w-full px-[1%] transform transition duration-1000 ease-out;
 }
 
 .label {
