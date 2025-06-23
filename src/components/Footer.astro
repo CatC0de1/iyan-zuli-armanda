@@ -13,7 +13,7 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
     <div class="flex flex-row justify-center md:justify-between xl:justify-around items-center">
       <div class="flex flex-row items-center">
         <div class="mr-[2%]">
-          <img src={kucing.src} fetchpriority="high" 
+          <img src={kucing.src} alt="Photo of me with my cat" fetchpriority="high" 
           class="w-30 h-auto shadow-2xl
           border-4 radius border-(--border-color)
           "/>
@@ -87,7 +87,7 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
           <a href="https://www.instagram.com/iyan_z21129?igsh=YzljYTk1ODg3Zg==" target="_blank" class="text-(--primary-color)">Iyan Zuli A</a> using
           <a href="https://astro.build/" target="_blank" class="text-[#BC52EE]">Astro</a>,
           <a href="https://react.dev/" target="_blank" class="text-[#61DAFB]">React</a>, and
-          <a href="https://tailwindcss.com/" target="_blank" class="text-[#06B6D4]">Tailwind CSS</a>
+          <a href="https://tailwindcss.com/" target="_blank" class="text-[#06B6D4]">TailwindCSS</a>
         </div>
       </div>
     </div>
@@ -95,19 +95,19 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
 </footer>
 
 
-<div 
+<button 
   id="backToTop"
   class="
     back-to-top fixed z-15 rounded-full bg-(--primary-color) h-auto mx-5 my-5 
     md:mx-8 md:my-8 lg:mx-10 lg:my-10 w-10 md:w-15 transition-opacity duration-300 
-    opacity-0 pointer-events-none
+    opacity-0
   "
   aria-label="Back to top"
 >
   <a href="#">
-    <img src={arrowUp.src} loading="lazy" class="w-auto h-auto hover:animate-bounce"/>
+    <img src={arrowUp.src} loading="lazy" alt="arrow up" class="w-auto h-auto"/>
   </a>
-</div>
+</button>
 
 <style>
 
@@ -123,13 +123,28 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
     border-bottom-left-radius: 1500px;
   }
 
+  @keyframes bounceAnimation {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    /* 30% {
+      transform: translateY(-10px);
+    } */
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
   .back-to-top {
     right: 0;
     bottom: 0;
   }
-
-  .back-to-top:hover {
-    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  .back-to-top:hover img {
+    animation: bounceAnimation 1s infinite ease-out;
   }
 
   @media (width >= 48rem) { 

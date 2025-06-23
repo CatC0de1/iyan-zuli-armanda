@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 interface Portfolio {
   url: string;
   imgSrc: string;
+  imgAlt: string;
   title: string;
   desc: string;
   technologies: string[],
@@ -42,7 +43,7 @@ export default function PortfolioCarousel({ portfolios }: { portfolios: Portfoli
       <SwiperSlide key={portfolio.title} className='flex h-full'>
         <div className="flex flex-col items-center bg-(--border-color) rounded-2xl shadow-2xl mt-[8%] mx-15 h-full">
           <div className="border-2 border-(--border-color) w-[90%] -mt-[8%] h-auto flex items-center justify-center overflow-hidden rounded-lg">
-            <img src={portfolio.imgSrc} loading="lazy" />
+            <img src={portfolio.imgSrc} loading="lazy" alt={portfolio.imgAlt} />
           </div>
           <div className="
             w-[90%]
@@ -63,7 +64,8 @@ export default function PortfolioCarousel({ portfolios }: { portfolios: Portfoli
                 {portfolio.technologies.map((tech) => (
                   <img 
                     key={tech}
-                    src={`/svg/tecs/${tech}.svg`} 
+                    src={`/svg/tecs/${tech}.svg`}
+                    alt={tech}
                     className="h-auto w-6 lg:w-8"
                     loading="lazy" 
                   />
