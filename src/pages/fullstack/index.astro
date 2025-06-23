@@ -8,14 +8,14 @@ import Footer from '../../components/Footer.astro';
 import Layout from '../../layouts/Layout.astro';
 import background from '../../assets/background.svg';
 
-import DirectoryListingApp from '../../assets/directoryListingApp.webp';
+import DirectoryListingApp from '../../assets/directory_listing_app.webp';
 import SelfService from '../../assets/self_service.webp';
 import Portfolio from '../../assets/portfolio.webp';
-import Server from '../../assets/server.webp';
-import puriRaniLasem from '../../assets/puriRaniLasem.webp';
-import forumApi from '../../assets/forumApi.webp';
-import myDiary from '../../assets/myDiary.webp';
-import bisaEnggress from '../../assets/bisaEnggress.webp'
+import Server from '../../assets/express_server.webp';
+import puriRaniLasem from '../../assets/puri_ranilasem.webp';
+import forumApi from '../../assets/forum_api.webp';
+import myDiary from '../../assets/mydiary.webp';
+import bisaEnggress from '../../assets/bisa_enggress.webp'
 
 export const prerender = true;
 
@@ -24,6 +24,7 @@ const portfolios = [
     url: "https://github.com/CatC0de1/SurabayaBestPoint/tree/main",
     imgSrc: DirectoryListingApp.src,
     title: "Directory Listing App",
+    desc: "SSR web apps with Express.js that displays a list of the best locations in Surabaya. This web allows users to search and browse various places.",
     technologies: [
       "ejs", 
       "bootstrap",
@@ -38,6 +39,7 @@ const portfolios = [
     url: "https://github.com/UniversitasNegeriSurabaya-Iyan165/oop_kafe-frontend",
     imgSrc: SelfService.src,
     title: "Prototype Self Service App",
+    desc: "Prototype of self-service application for cafe that makes it easy for customers to order independently. Run locally with local server.",
     technologies: [
       "ejs",
       "sass",
@@ -52,6 +54,7 @@ const portfolios = [
     url: "https://github.com/CatC0de1/iyan-zuli-armanda",
     imgSrc: Portfolio.src,
     title: "Personal Website",
+    desc: "Personal portfolio website showcasing my projects and skills as a developer. Built with Astro, React, and Tailwind for performance and a modern look.",
     technologies: [
       "astro", 
       "react", 
@@ -64,6 +67,7 @@ const portfolios = [
     url: "https://github.com/UniversitasNegeriSurabaya-Iyan165/oop_kafe-backend",
     imgSrc: Server.src,
     title: "Server with OOP",
+    desc: "Express.js server with OOP architecture for cafe application backend. Manage data in a structured and efficient manner.",
     technologies: [
       "js",
       "express", 
@@ -74,7 +78,8 @@ const portfolios = [
     {
     url: "https://github.com/CatC0de1/BisaEnggress-frontend",
     imgSrc: bisaEnggress.src,
-    title: "Chatbot English Learning Mobile App",
+    title: "Bisa Enggress",
+    desc: "Android application for learning English with interactive chatbot. Made with React Native CLI.",
     technologies: [
       "react",
       "ts",
@@ -85,7 +90,8 @@ const portfolios = [
     {
     url: "https://github.com/CatC0de1/PuriRaniLasem",
     imgSrc: puriRaniLasem.src,
-    title: "Makeup Artist Branding Website",
+    title: "Puri Ranilasem",
+    desc: "Gallery website for branding makeup artist Puri Ranilasem. Showcasing portfolio of works and services in a visual and attractive way.",
     technologies: [
       "astro", 
       "react", 
@@ -97,7 +103,8 @@ const portfolios = [
     {
     url: "https://github.com/CatC0de1/AdonisForumApi-backend",
     imgSrc: forumApi.src,
-    title: "Forum API Server with Adonis",
+    title: "Forum API",
+    desc: "RESTful API server using AdonisJS for discussion forum application. Supports authentication, posting, and forum data management features efficiently.",
     technologies: [
       "adonis", 
       "ts", 
@@ -108,7 +115,8 @@ const portfolios = [
     {
     url: "https://github.com/CatC0de1/MyDiary",
     imgSrc: myDiary.src,
-    title: "Prototype MyDiary Desktop App",
+    title: "Prototype MyDiary",
+    desc: "A prototype desktop diary application based on Tauri and React. Allows users to record daily activities with a simple and secure interface.",
     technologies: [
       "tauri", 
       "rust", 
