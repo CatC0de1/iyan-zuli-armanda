@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import '../../styles/style.css';
 
+const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+console.log(import.meta.env.PUBLIC_EMAILJS_SERVICE_ID);
+console.log(import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID);
+console.log(import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY);
+
+
 const ContactUs = () => {
   const [appear, setAppear] = useState(false);
   const [formData, setFormData] = useState({
@@ -23,8 +31,8 @@ const ContactUs = () => {
     setStatusMessage(null);
 
     try {
-      await emailjs.send('service_slrdlkp', 'template_4cl1i2y', formData, {
-        publicKey: 'KfuiBZGsjeoCLtSxj',
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, {
+        publicKey: PUBLIC_KEY,
       });
       setFormData({ user_name: '', user_email: '', message: '' });
       setStatusMessage({ text: '✅ Message Sent Successfully! We will respond soon. 😊', type: 'success' });
