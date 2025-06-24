@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/style.css';
 
 const ContactUs = () => {
+  const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
   const [appear, setAppear] = useState(false);
   const [formData, setFormData] = useState({
     user_name: '',
@@ -22,7 +23,7 @@ const ContactUs = () => {
     setStatusMessage(null);
 
     try {
-      const res = await fetch(import.meta.env.PUBLIC_SERVER_API_URL, {
+      const res = await fetch(`${API_BASE_URL}/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
