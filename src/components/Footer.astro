@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import kucing from '../assets/kucing.webp';
 import arrowUp from '../assets/arrow_up.webp';
 
@@ -13,10 +14,12 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
     <div class="flex flex-row justify-center md:justify-between xl:justify-around items-center">
       <div class="flex flex-row items-center">
         <div class="mr-[2%]">
-          <img src={kucing.src} alt="Photo of me with my cat" fetchpriority="high" 
-          class="w-30 h-auto shadow-2xl
-          border-4 radius border-(--border-color)
-          "/>
+          <Image 
+            src={kucing} 
+            alt="Photo of me and with my cat"
+            class="w-30 h-auto shadow-2xl border-4 radius border-(--border-color)"
+            loading="lazy"
+        />
         </div>
         <div>
           <div class="font-bold mb-[4%]
@@ -105,7 +108,7 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
   aria-label="Back to top"
 >
   <a href="#">
-    <img src={arrowUp.src} loading="lazy" alt="arrow up" class="w-auto h-auto"/>
+    <Image src={arrowUp} loading="lazy" alt="arrow up" class="arrow-up w-auto h-auto"/>
   </a>
 </button>
 
@@ -127,14 +130,8 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
     0%, 100% {
       transform: translateY(0px);
     }
-    /* 30% {
+    50% {
       transform: translateY(-10px);
-    } */
-    40% {
-      transform: translateY(-10px);
-    }
-    60% {
-      transform: translateY(-5px);
     }
   }
 
@@ -143,7 +140,7 @@ bg-(--background-color) border-t-8 border-t-(--border-color)
     bottom: 0;
   }
   
-  .back-to-top:hover img {
+  .back-to-top:hover .arrow-up {
     animation: bounceAnimation 1s infinite ease-out;
   }
 
