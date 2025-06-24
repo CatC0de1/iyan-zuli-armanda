@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
 import '../../styles/style.css';
-
-const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
-console.log(import.meta.env.PUBLIC_EMAILJS_SERVICE_ID);
-console.log(import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID);
-console.log(import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY);
-
 
 const ContactUs = () => {
   const [appear, setAppear] = useState(false);
@@ -31,13 +22,26 @@ const ContactUs = () => {
     setStatusMessage(null);
 
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, {
-        publicKey: PUBLIC_KEY,
+      const res = await fetch(import.meta.env.PUBLIC_SERVER_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setFormData({ user_name: '', user_email: '', message: '' });
-      setStatusMessage({ text: '✅ Message Sent Successfully! We will respond soon. 😊', type: 'success' });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setFormData({ user_name: '', user_email: '', message: '' });
+        setStatusMessage({ text: '✅ Message sent successfully! We will respond soon. 😊', type: 'success' });
+      } else if (result.details) {
+        const detailText = result.details.map((d: any) => d.message).join(', ');
+        setStatusMessage({ text: `${detailText}`, type: 'error' });
+      } else {
+        setStatusMessage({ text: `${result.error || 'Unknown error'}`, type: 'error' });
+      }
+
     } catch (error) {
-      setStatusMessage({ text: '❌ Message Failed to Send! Please check your connection.', type: 'error' });
+      setStatusMessage({ text: '❌ Message failed to send! Something went wrong!', type: 'error' });
       console.error('FAILED...', error);
     } finally {
       setSubmitting(false);
