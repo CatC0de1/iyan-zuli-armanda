@@ -15,7 +15,8 @@ import Server from '../../assets/express_server.webp';
 import puriRaniLasem from '../../assets/puri_ranilasem.webp';
 import forumApi from '../../assets/forum_api.webp';
 import myDiary from '../../assets/my_diary.webp';
-import bisaEnggress from '../../assets/bisa_enggress.webp'
+import bisaEnggress from '../../assets/bisa_enggress.webp';
+import stmpApi from '../../assets/stmp_api.webp';
 
 export const prerender = true;
 
@@ -69,7 +70,7 @@ const portfolios = [
   {
     url: "https://github.com/UniversitasNegeriSurabaya-Iyan165/oop_kafe-backend",
     imgSrc: Server.src,
-    imgAlt: "Server source code look like on Visual Studio Code",
+    imgAlt: "Server oop architecture source code look like on Visual Studio Code",
     title: "Server with OOP",
     desc: "Express.js server with OOP architecture for cafe application backend. Manage data in a structured and efficient manner.",
     technologies: [
@@ -135,6 +136,19 @@ const portfolios = [
     ],
     build: ""
   },
+  {
+    url: "https://github.com/CatC0de1/EmailApi",
+    imgSrc: stmpApi.src,
+    imgAlt: "Server email api source code look like on Visual Studio Code",
+    title: "STMP server",
+    desc: "Simple main transfer protocol API server with Express.js to send gmail. Deployed on Render and pingable with Cronjobs.",
+    technologies: [
+      "express",
+      "ts",
+      "zod"
+    ],
+    build: "https://stmp-api.onrender.com"
+  }
 ];
 ---
 
