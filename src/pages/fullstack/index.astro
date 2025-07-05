@@ -17,6 +17,7 @@ import forumApi from '../../assets/forum_api.webp';
 import myDiary from '../../assets/my_diary.webp';
 import bisaEnggress from '../../assets/bisa_enggress.webp';
 import stmpApi from '../../assets/stmp_api.webp';
+import myBlog from '../../assets/software_techs_portal.webp';
 
 export const prerender = true;
 
@@ -141,13 +142,27 @@ const portfolios = [
     imgSrc: stmpApi.src,
     imgAlt: "Server email api source code look like on Visual Studio Code",
     title: "STMP server",
-    desc: "Simple main transfer protocol API server with Express.js to send gmail. Deployed on Render and pingable with Cronjobs.",
+    desc: "Simple main transfer protocol API server with Express.js to send gmail. Deployed on Render and pingable with GitHub Action.",
     technologies: [
       "express",
       "ts",
       "zod"
     ],
     build: "https://stmp-api.onrender.com"
+  },
+  {
+    url: "https://github.com/CatC0de1/myBlog",
+    imgSrc: myBlog.src,
+    imgAlt: "Hompage of Software Techs Portal Blogs",
+    title: "Dinamyc Blogsite",
+    desc: "Simple and fast SSG dinamyc blogs made width astro and markdonw as content. The blogs show software technologies content for developers from me.",
+    technologies: [
+      "astro",
+      "bootstrap",
+      "markdown",
+      "disqus"
+    ],
+    build: "https://software-techs-portal.vercel.app"
   }
 ];
 ---
