@@ -46,7 +46,7 @@ const ContactUs = () => {
       }
 
     } catch (error) {
-      setStatusMessage({ text: 'Message failed to send! Something went wrong!', type: 'error' });
+      setStatusMessage({ text: 'Message failed to send! Please send message again in a few minutes', type: 'error' });
       setShowPopup(true);
       // console.error('FAILED...', error);
     } finally {
