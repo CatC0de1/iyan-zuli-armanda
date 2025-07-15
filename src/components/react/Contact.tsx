@@ -5,8 +5,8 @@ const ContactUs = () => {
   const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
   const [appear, setAppear] = useState(false);
   const [formData, setFormData] = useState({
-    user_name: '',
-    user_email: '',
+    user_name_sender: '',
+    user_email_sender: '',
     message: '',
   });
   const [isSubmitting, setSubmitting] = useState(false);
@@ -24,7 +24,7 @@ const ContactUs = () => {
     setStatusMessage(null);
 
     try {
-      const res = await fetch(`${API_BASE_URL}/send-email`, {
+      const res = await fetch(`${API_BASE_URL}/send-email/private`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -33,7 +33,7 @@ const ContactUs = () => {
       const result = await res.json();
 
       if (result.success) {
-        setFormData({ user_name: '', user_email: '', message: '' });
+        setFormData({ user_name_sender: '', user_email_sender: '', message: '' });
         setStatusMessage({ text: "Message received. I'll get back to you soon.", type: 'success' });
         setShowPopup(true);
       } else if (result.details) {
@@ -85,9 +85,9 @@ const ContactUs = () => {
             <input 
               type="text" 
               id="name" 
-              name="user_name" 
+              name="user_name_sender" 
               className="input" 
-              value={formData.user_name} 
+              value={formData.user_name_sender} 
               onChange={handleChange} 
               required 
             />
@@ -97,9 +97,9 @@ const ContactUs = () => {
             <input 
               type="email" 
               id="email" 
-              name="user_email" 
+              name="user_email_sender" 
               className="input" 
-              value={formData.user_email} 
+              value={formData.user_email_sender} 
               onChange={handleChange} 
               required 
             />
