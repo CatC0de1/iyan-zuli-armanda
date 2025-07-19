@@ -64,7 +64,7 @@ export default function PortfolioCarousel({ portfolios }: { portfolios: Portfoli
                 {portfolio.technologies.map((tech) => (
                   <img 
                     key={tech}
-                    src={`/svg/tecs/${tech}.svg`}
+                    src={`/svg/techs/${tech}.svg`}
                     alt={tech}
                     className="h-auto w-6 lg:w-8"
                     loading="lazy" 
